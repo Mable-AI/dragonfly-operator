@@ -7041,6 +7041,14 @@ spec:
                         type: string
                     type: object
                 type: object
+              terminationGracePeriodSeconds:
+                description: |-
+                  (Optional) Duration in seconds the Dragonfly pod needs to terminate gracefully.
+                  Raise it when the shutdown snapshot of a large dataset needs more than the
+                  Kubernetes default of 30 seconds. Defaults to the Kubernetes default when unset.
+                format: int64
+                minimum: 0
+                type: integer
               tiering:
                 description: (Optional) Dragonfly SSD Tiering configuration
                 properties:
